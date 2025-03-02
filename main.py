@@ -9,18 +9,18 @@ df = pd.read_csv("topics.csv")
 for index, row in df.iterrows():
     pdf.add_page()
 
-    #Set the Header
+    # Set the Header
     pdf.set_font(family="Times", style="B", size=12)
     pdf.set_text_color(100, 100, 100)
     pdf.cell(w=0, h=12, txt=row["Topic"], align="L", 
          ln=1)
-    #Loop to created a lined document, Take out to leave blank.
+    # Loop to created a lined document, Take out to leave blank.
     for y in range(20, 298, 10):
         pdf.line(10, y, 200, y)
         
-    #pdf.line(10,21, 200, 21)
+    # pdf.line(10,21, 200, 21)
     
-    #Set the footer
+    # Set the footer
     pdf.ln(265)
     pdf.set_font(family="Times", style="B", size=12)
     pdf.set_text_color(180, 180, 180)
@@ -29,12 +29,12 @@ for index, row in df.iterrows():
     for i in range(row["Pages"] - 1):
         pdf.add_page()
         
-        #Set the footer
+        # Set the footer
         pdf.ln(277)
         pdf.set_font(family="Times", style="B", size=12)
         pdf.set_text_color(180, 180, 180)
         pdf.cell(w=0, h=10, txt=row["Topic"], align="R")
-        #Loop to keep adding lines to more pages
+        # Loop to keep adding lines to more pages
         for y in range(20, 298, 10):
             pdf.line(10, y, 200, y)
 
